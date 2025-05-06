@@ -10,7 +10,6 @@ It demonstrates robust file‑I/O, dynamic memory management, and plug‑and‑p
 | 2 · Transform lines | U → convert every line to uppercase<br>R → reverse each line | Action dispatched through `TransformConfig` |
 | 3 · Summarize lines | • total line count<br>• frequency of a target word (case‑insensitive)<br>• average line length | Uses helper `countKeyword()` & on‑the‑fly stats |
 | 4 · Exit | Quit safely, freeing all heap memory | `freeLines()` cleans up |
-                                                                              |
 
 Every processed result is immediately written to the output file you specify.
 
