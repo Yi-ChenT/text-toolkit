@@ -4,16 +4,13 @@ This is program is used to let you filter, transform, and summarize the contents
 It demonstrates robust file‑I/O, dynamic memory management, and plug‑and‑play “operations” implemented with function pointers and configuration structs.
 
 ## 🔑 Features
-|Menu Option	        |Capability	                            |Process          |
-|-----------------------|---------------------------------------|-----------------|
-|1 · Filter lines	    |Keep lines that do not contain a user‑supplied keyword	                                                        |Two‑tier loop + keyCheck() to drop matches                                                        |
-|2 · Transform lines	|- U → convert every line to uppercase
-- R → reverse each line	                                        |Action dispatched through TransformConfig                                                           |
-|3 · Summarize lines	|Output 3 facts:
-  • total line count
-  • frequency of a target word (case‑insensitive)
-  • average line length	                                        |Uses helper countKeyword() & on‑the‑fly stats                                                                             |
-|4 · Exit	            |Quit safely, freeing all heap memory	|freeLines() cleans up                                                                                |
+| Menu Option | Capability | Process |
+|------------|------------|---------|
+| 1 · Filter lines | Keep lines that do _not_ contain a user‑supplied keyword | Two‑tier loop + `keyCheck()` to drop matches |
+| 2 · Transform lines | U → convert every line to uppercase<br>R → reverse each line | Action dispatched through `TransformConfig` |
+| 3 · Summarize lines | • total line count<br>• frequency of a target word (case‑insensitive)<br>• average line length | Uses helper `countKeyword()` & on‑the‑fly stats |
+| 4 · Exit | Quit safely, freeing all heap memory | `freeLines()` cleans up |
+                                                                              |
 
 Every processed result is immediately written to the output file you specify.
 
