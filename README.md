@@ -6,13 +6,13 @@ It demonstrates robust file‑I/O, dynamic memory management, and plug‑and‑p
 ## 🔑 Features
 |Menu Option	        |Capability	                            |Process          |
 |-----------------------|---------------------------------------|-----------------|
-|1 · Filter lines	    |Keep lines that do not contain a user‑supplied keyword	  |Two‑tier loop + keyCheck() to drop matches                                        |
+|1 · Filter lines	    |Keep lines that do not contain a user‑supplied keyword	                                                        |Two‑tier loop + keyCheck() to drop matches                                                        |
 |2 · Transform lines	|- U → convert every line to uppercase
-- R → reverse each line	                                        |Action dispatched through TransformConfig
+- R → reverse each line	                                        |Action dispatched through TransformConfig                                                           |
 |3 · Summarize lines	|Output 3 facts:
   • total line count
   • frequency of a target word (case‑insensitive)
-  • average line length	                                        |Uses helper countKeyword() & on‑the‑fly stats                                                                  |
+  • average line length	                                        |Uses helper countKeyword() & on‑the‑fly stats                                                                             |
 |4 · Exit	            |Quit safely, freeing all heap memory	|freeLines() cleans up                                                                                |
 
 Every processed result is immediately written to the output file you specify.
@@ -33,8 +33,8 @@ Mac User:
 ## ✨ Implementation Highlights
 - Loose coupling via function pointers
 
-`typedef char **(*funcPtr)(char **, int, void *, int *);`
-allows new operations to drop in without touching main.c.
+    - `typedef char **(*funcPtr)(char **, int, void *, int *);`  
+    - allows new operations to drop in without touching main.c.
 
 - Memory‑safe patterns
 All heap allocations checked; buffers sized with strlen + 1; interactive input trimmed with newline guards.
